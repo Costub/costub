@@ -1,3 +1,4 @@
+import { Magnetic } from "../components/Magnetic";
 import { Reveal } from "../components/Reveal";
 import { PixelSprite } from "../components/PixelSprite";
 import { links } from "../data/content";
@@ -10,9 +11,11 @@ export function Footer() {
           <p className="eyebrow">04 — Contact</p>
           <p className="footer-sub">To get in touch with me —</p>
           <div className="footer-cta">
-            <a href={`mailto:${links.email}`} className="btn btn-primary">
-              {links.email}
-            </a>
+            <Magnetic>
+              <a href={`mailto:${links.email}`} className="btn btn-primary">
+                {links.email}
+              </a>
+            </Magnetic>
           </div>
         </Reveal>
         <div className="footer-bottom">

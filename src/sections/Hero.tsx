@@ -1,5 +1,11 @@
 import { Fragment } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { Magnetic } from "../components/Magnetic";
 import { PixelSprite } from "../components/PixelSprite";
 import { links } from "../data/content";
 
@@ -9,24 +15,36 @@ export function Hero() {
   const reduce = useReducedMotion();
   let letterIndex = 0;
 
+  // parallax: sprites sink at different depths as the hero scrolls away
+  const { scrollY } = useScroll();
+  const yVinyl = useTransform(scrollY, [0, 800], [0, 140]);
+  const yGamepad = useTransform(scrollY, [0, 800], [0, 60]);
+  const yBolt = useTransform(scrollY, [0, 800], [0, 220]);
+
   return (
     <section className="hero" id="top">
       {/* idle sprites drifting in the negative space */}
       <div className="hero-sprites">
-        <span style={{ top: "18%", right: "12%" }}>
+        <motion.span
+          style={{ top: "18%", right: "12%", y: reduce ? 0 : yVinyl }}
+        >
           <PixelSprite name="vinyl" size={44} className="sprite-spin" />
-        </span>
-        <span style={{ bottom: "24%", right: "22%" }}>
+        </motion.span>
+        <motion.span
+          style={{ bottom: "24%", right: "22%", y: reduce ? 0 : yGamepad }}
+        >
           <PixelSprite name="gamepad" size={38} className="sprite-float" />
-        </span>
-        <span style={{ top: "38%", right: "34%" }}>
+        </motion.span>
+        <motion.span
+          style={{ top: "38%", right: "34%", y: reduce ? 0 : yBolt }}
+        >
           <PixelSprite
             name="bolt"
             size={22}
             className="sprite-float"
             style={{ animationDelay: "-2.2s" }}
           />
-        </span>
+        </motion.span>
       </div>
 
       <div className="wrap">
@@ -52,6 +70,18 @@ export function Hero() {
                     className="letter"
                     initial={reduce ? false : { opacity: 0, y: 26 }}
                     animate={{ opacity: 1, y: 0 }}
+                    whileHover={
+                      reduce
+                        ? undefined
+                        : {
+                            y: -8,
+                            transition: {
+                              type: "spring",
+                              stiffness: 500,
+                              damping: 14,
+                            },
+                          }
+                    }
                     transition={{
                       duration: 0.5,
                       delay: 0.15 + i * 0.035,
@@ -102,12 +132,16 @@ export function Hero() {
             )}
           </p>
           <div className="hero-cta">
-            <a href="#work" className="btn btn-primary">
-              See my work ↓
-            </a>
-            <a href={links.resume} download className="btn">
-              Download resume
-            </a>
+            <Magnetic>
+              <a href="#work" className="btn btn-primary">
+                See my work ↓
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a href={links.resume} download className="btn">
+                Download resume
+              </a>
+            </Magnetic>
           </div>
           <div className="hero-social">
             <a href={links.github} target="_blank" rel="noreferrer">

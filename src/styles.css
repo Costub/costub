@@ -263,6 +263,15 @@ section {
 .nav-links a:not(.btn):hover {
   color: var(--text);
 }
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--orange);
+  transform-origin: 0 50%;
+}
 
 /* ── hero ────────────────────────────────────────────────────────────── */
 .hero {
@@ -353,24 +362,19 @@ section {
 }
 .marquee-track {
   display: flex;
-  gap: 48px;
   width: max-content;
-  animation: marquee 36s linear infinite;
+  will-change: transform;
 }
 .marquee-item {
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-right: 48px;
   font-family: var(--font-pixel);
   font-size: 12px;
   letter-spacing: 0.25em;
   color: var(--faint);
   white-space: nowrap;
-}
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 /* ── projects ────────────────────────────────────────────────────────── */
@@ -636,7 +640,6 @@ section {
   .sprite-spin,
   .sprite-bounce,
   .sprite-tilt,
-  .marquee-track,
   .tile:hover .tile-sprite {
     animation: none;
   }
