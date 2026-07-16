@@ -1,37 +1,15 @@
-# costub.dev — portfolio
+# Hey, I'm Kaustubh 🏀
 
-Personal portfolio for Kaustubh Mhaisekar. Dark, clean, typography-led, with hand-drawn pixel sprites as accents ("clean studio, pixel soul").
+AI engineer at Goldman Sachs — I build and own AI & agentic workflows that take the busywork out of investment research. Outside work I'm usually making beats, DJing, editing videos, adding to the sneaker rotation, or watching whatever sport is on.
 
-## Stack
+## Things I've built recently
 
-Vite · React · TypeScript · Framer Motion · Fontsource (Space Grotesk / Inter / Silkscreen)
+- 🎙️ **[FeedFM](https://feed-fm.xyz/)** — your feeds, but as an AI radio station ([source](https://github.com/costub/FeedFM))
+- 🎵 **[Dhoondle](https://dhoondle.fun/)** — Wordle × Bandle, Bollywood edition ([source](https://github.com/costub/dhundle))
+- 🐸 **[Autotoad](https://autotoad.vercel.app)** — a voice instrument that lives in your browser ([source](https://github.com/costub/autotoad))
 
-## Run
+## More
 
-```bash
-npm install
-npm run dev      # local dev server
-npm run build    # typecheck + production build → dist/
-npm run preview  # serve the production build
-```
+👉 Full story, resume and pixel art at **[costub.vercel.app](https://costub.vercel.app)** — this repo is its source (Vite + React + TypeScript + Motion).
 
-## Editing content
-
-All copy, links, projects, experience and interests live in one file:
-[`src/data/content.ts`](src/data/content.ts)
-
-**Placeholders to fill in:**
-- `links.linkedin` — verify the URL is your actual LinkedIn handle
-- Instagram (music/DJ) and video-edits links are intentionally absent for now —
-  add them to `links` and wire them into the Beats tile / socials when ready
-
-The resume served by the site is `public/resume.pdf` — replace that file to update it.
-
-Pixel icons are authored as character grids in
-[`src/components/PixelSprite.tsx`](src/components/PixelSprite.tsx) — edit the
-rows/colors or add new sprites there.
-
-## Deploy
-
-Ready for Vercel: `vercel` from this folder (or import the repo in the Vercel
-dashboard). Any static host works — deploy the `dist/` folder after `npm run build`.
+📫 Reach me at **kaustubh.m0803@gmail.com**
