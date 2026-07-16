@@ -1,6 +1,6 @@
 # Hey, I'm Kaustubh 🏀
 
-AI engineer at Goldman Sachs — I build and own AI & agentic workflows that take the busywork out of investment research. Outside work I'm usually making beats, DJing, editing videos, adding to the sneaker rotation, or watching whatever sport is on.
+AI engineer at Goldman Sachs — I build and own AI & agentic workflows that take the busywork out of investment research. Outside work I'm usually making beats, DJing, adding to the sneaker rotation, or watching whatever sport is on.
 
 ## Things I've built recently
 
